@@ -23,10 +23,10 @@ function Profile() {
   const [isShow, setIsShow] = useState(true);
   return (
     <>
-      <PopUp isShow={isShow} />
+      <PopUp isShow={!isShow} />
       <ProfileStyles onClick={() => setIsShow(!isShow)}>
         <img src={logo} alt="" />
-        <ArrowDir isShow={isShow} />
+        <ArrowDir isShow={!isShow} />
       </ProfileStyles>
     </>
   );
