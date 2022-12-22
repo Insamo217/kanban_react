@@ -2,7 +2,7 @@ import React from "react";
 import ToDo from "./todo";
 import { TaskListUlStyles } from "./styles";
 
-const ToDoList = ({ toDoList, status }) => {
+const ToDoList = ({ toDoList }) => {
   return (
     <TaskListUlStyles>
       {toDoList.map((todo) => {
