@@ -3,16 +3,13 @@ import Column from "components/blocks/column/column";
 import { Wrapper } from "../page-wrapper/styles";
 import { testList } from "mocks/list";
 import ToDoList from "components/blocks/column/todolist";
-import ToDoForm from "components/blocks/column/todoform";
+import AddCard from "components/blocks/column/addcard";
 
 function Main() {
   const [toDoList, setToDoList] = useState(testList);
   const addTask = (userInput) => {
     let copy = [...toDoList];
-    copy = [
-      ...copy,
-      { id: toDoList.length + 1, task: userInput, complete: false },
-    ];
+    copy = [...copy, { id: toDoList.length + 1, task: userInput }];
     setToDoList(copy);
   };
   return (
@@ -20,7 +17,7 @@ function Main() {
       <Column
         title="Backlog"
         taskList={<ToDoList toDoList={toDoList} />}
-        taskForm={<ToDoForm addTask={addTask} />}
+        addCard={<AddCard addTask={addTask} />}
       />
       <Column title="Ready" />
       <Column title="In Progress" />
