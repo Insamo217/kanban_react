@@ -1,10 +1,11 @@
 import React from "react";
-import { ColumnStyles } from "./styles";
+import { ColumnStyles, TaskListDivStyles } from "./styles";
 
 function Column(props) {
   return (
     <ColumnStyles>
-      <p>{props.title}</p>
+      {props.title}
+      <TaskListDivStyles>{props.taskList}</TaskListDivStyles>
     </ColumnStyles>
   );
 }
