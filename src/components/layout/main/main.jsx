@@ -9,8 +9,10 @@ function Main() {
   const [toDoList, setToDoList] = useState(testList);
   const addTask = (userInput) => {
     let copy = [...toDoList];
-    copy = [...copy, { id: toDoList.length + 1, task: userInput }];
-    setToDoList(copy);
+    if (userInput) {
+      copy = [...copy, { id: toDoList.length + 1, task: userInput }];
+      setToDoList(copy);
+    }
   };
   return (
     <Wrapper backGroundColor={"#0079BF"} as="section">

@@ -6,6 +6,7 @@ export const ColumnStyles = styled.div`
   width: 20%;
   border-radius: 10px;
   font-size: 18px;
+  position: relative;
 `;
 
 export const TaskStyles = styled.li`
@@ -24,17 +25,35 @@ export const TaskListUlStyles = styled.ul`
 export const TaskListDivStyles = styled.div`
   height: 500px;
   overflow: auto;
-  margin-top: 20px;
+  margin: 20px 0 40px;
 `;
 
 export const FormStyles = styled.form`
   display: flex;
   flex-direction: column;
-  width: 130px;
+  width: 90%;
   position: absolute;
-  bottom: -212px;
+  bottom: 10px;
 `;
 
 export const ButtonStyles = styled.button`
   width: 130px;
+  color: #5e6c84;
+  font-size: 18px;
+  background-color: white;
+  border-radius: 10px;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+  :hover {
+    color: white;
+    background-color: #0079bf;
+    transition: 0.5s;
+  }
+`;
+
+export const InputStyles = styled.input`
+  margin-bottom: 15px;
+  border: none;
+  height: 20px;
 `;

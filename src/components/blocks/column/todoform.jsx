@@ -1,22 +1,10 @@
-import React, { useState } from "react";
-import { FormStyles, ButtonStyles } from "./styles";
+import React from "react";
+import { FormStyles, ButtonStyles, InputStyles } from "./styles";
 
-const ToDoForm = ({ addTask }) => {
-  const [userInput, setUserInput] = useState("");
-  const [isShow, setIsShow] = useState(true);
-  const handleChange = (e) => {
-    setUserInput(e.currentTarget.value);
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    addTask(userInput);
-    setIsShow(!isShow);
-    setUserInput("");
-  };
+const ToDoForm = ({ handleSubmit, isShow, handleChange, userInput }) => {
   return isShow ? (
     <FormStyles onSubmit={handleSubmit}>
-      <input
+      <InputStyles
         value={userInput}
         type="text"
         onChange={handleChange}
