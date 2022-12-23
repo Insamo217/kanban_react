@@ -26,3 +26,15 @@ export const TaskListDivStyles = styled.div`
   overflow: auto;
   margin-top: 20px;
 `;
+
+export const FormStyles = styled.form`
+  display: flex;
+  flex-direction: column;
+  width: 130px;
+  position: absolute;
+  bottom: -212px;
+`;
+
+export const ButtonStyles = styled.button`
+  width: 130px;
+`;

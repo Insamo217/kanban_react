@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import ToDoForm from "components/blocks/column/todoform";
+import { ButtonStyles } from "./styles";
 
 function Form({ isShow, addTask }) {
   return isShow ? (
     <div>
-      <ToDoForm addTask={addTask} />
+      <ToDoForm addTask={addTask} isShow={isShow} />
     </div>
   ) : null;
 }
@@ -14,7 +15,7 @@ function AddCard({ addTask }) {
   return (
     <>
       <Form isShow={!isShow} addTask={addTask} />
-      <button onClick={() => setIsShow(!isShow)}>Add Card</button>
+      <ButtonStyles onClick={() => setIsShow(!isShow)}>Add Card</ButtonStyles>
     </>
   );
 }
