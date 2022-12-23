@@ -8,13 +8,18 @@ import AddCardBackLog from "components/blocks/column/listInBacklog";
 
 function Main() {
   const [toDoList, setToDoList] = useState(testList);
+  const [toDoListReady, setToDoListReady] = useState([]);
   const addTask = (userInput) => {
     let copy = [...toDoList];
     if (userInput) {
       copy = [...copy, { id: toDoList.length + 1, task: userInput }];
       setToDoList(copy);
-      console.log(copy);
     }
+  };
+  const addTaskReady = (value) => {
+    let copyReady = [...toDoListReady];
+    copyReady = [...copyReady, { id: toDoListReady.length + 1, task: value }];
+    setToDoListReady(copyReady);
   };
   return (
     <Wrapper backGroundColor={"#0079BF"} as="section">
@@ -25,8 +30,13 @@ function Main() {
       />
       <Column
         title="Ready"
+        taskList={<ToDoList toDoList={toDoListReady} column="Backlog" />}
         addCardBackLog={
-          <AddCardBackLog taskListBackLog={<ToDoList toDoList={toDoList} />} />
+          <AddCardBackLog
+            taskListBackLog={
+              <ToDoList toDoList={toDoList} addTaskReady={addTaskReady} />
+            }
+          />
         }
       />
       <Column title="In Progress" />
