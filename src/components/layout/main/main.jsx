@@ -9,6 +9,8 @@ import AddCardBackLog from "components/blocks/column/listInBacklog";
 function Main() {
   const [toDoList, setToDoList] = useState(testList);
   const [toDoListReady, setToDoListReady] = useState([]);
+  const [toDoListProgress, setToDoListProgress] = useState([]);
+  const [toDoListFinished, setToDoListFinished] = useState([]);
   const addTask = (userInput) => {
     let copy = [...toDoList];
     if (userInput) {
@@ -21,26 +23,74 @@ function Main() {
     copyReady = [...copyReady, { id: toDoListReady.length + 1, task: value }];
     setToDoListReady(copyReady);
   };
+  const addTaskProgress = (value) => {
+    let copyProgress = [...toDoListProgress];
+    copyProgress = [
+      ...copyProgress,
+      { id: toDoListProgress.length + 1, task: value },
+    ];
+    setToDoListProgress(copyProgress);
+  };
+  const addTaskFinished = (value) => {
+    let copyFinished = [...toDoListFinished];
+    copyFinished = [
+      ...copyFinished,
+      { id: toDoListFinished.length + 1, task: value },
+    ];
+    setToDoListFinished(copyFinished);
+  };
   return (
     <Wrapper backGroundColor={"#0079BF"} as="section">
       <Column
         title="Backlog"
-        taskList={<ToDoList toDoList={toDoList} column="Backlog" />}
+        taskList={<ToDoList toDoList={toDoList} view="ulList" />}
         addCard={<AddCard addTask={addTask} />}
       />
       <Column
         title="Ready"
-        taskList={<ToDoList toDoList={toDoListReady} column="Backlog" />}
+        taskList={<ToDoList toDoList={toDoListReady} view="ulList" />}
         addCardBackLog={
           <AddCardBackLog
             taskListBackLog={
-              <ToDoList toDoList={toDoList} addTaskReady={addTaskReady} />
+              <ToDoList
+                toDoList={toDoList}
+                view="selectorReady"
+                addTaskReady={addTaskReady}
+              />
             }
           />
         }
       />
-      <Column title="In Progress" />
-      <Column title="Finished" />
+      <Column
+        title="In Progress"
+        taskList={<ToDoList toDoList={toDoListProgress} view="ulList" />}
+        addCardBackLog={
+          <AddCardBackLog
+            taskListBackLog={
+              <ToDoList
+                toDoList={toDoListReady}
+                view="selectorProgress"
+                addTaskProgress={addTaskProgress}
+              />
+            }
+          />
+        }
+      />
+      <Column
+        title="Finished"
+        taskList={<ToDoList toDoList={toDoListFinished} view="ulList" />}
+        addCardBackLog={
+          <AddCardBackLog
+            taskListBackLog={
+              <ToDoList
+                toDoList={toDoListProgress}
+                view="selectorFinished"
+                addTaskFinished={addTaskFinished}
+              />
+            }
+          />
+        }
+      />
     </Wrapper>
   );
 }
