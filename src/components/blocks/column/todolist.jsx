@@ -9,14 +9,11 @@ const ToDoList = ({ addTaskReady, toDoList, column }) => {
   function handleSelectChange(event) {
     setSelectedClient(event.target.value);
     addTaskReady(event.target.value);
-
-    // console.log(toDoList);
-    // console.log(event.target.value);
-    // let myIndex = toDoList.indexOf(event.target.value);
-    // console.log(myIndex);
-    // if (myIndex !== -1) {
-    //   toDoList.splice(myIndex, 1);
-    // }
+    toDoList.forEach(function (item, i) {
+      if (toDoList[i].task === event.target.value) {
+        delete toDoList[i].task;
+      }
+    });
   }
 
   if (column === "Backlog") {
@@ -31,6 +28,7 @@ const ToDoList = ({ addTaskReady, toDoList, column }) => {
     return (
       <>
         <select value={selectedClient} onChange={handleSelectChange}>
+          <option>Выбери таск</option>
           {toDoList.map((todo) => {
             return <ToDo todo={todo} column={column} />;
           })}
