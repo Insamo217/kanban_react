@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ToDo from "./todo";
 
-import { TaskListUlStyles } from "./styles";
+import { TaskListUlStyles, SelectStyles } from "./styles";
 
 const ToDoList = ({
   addTaskReady,
@@ -55,18 +55,21 @@ const ToDoList = ({
   } else if (view === "selectorReady") {
     return (
       <>
-        <select value={selectedClientReady} onChange={handleSelectChangeReady}>
+        <SelectStyles
+          value={selectedClientReady}
+          onChange={handleSelectChangeReady}
+        >
           <option>Backlog list</option>
           {toDoList.map((todo) => {
             return <ToDo todo={todo} view={view} />;
           })}
-        </select>
+        </SelectStyles>
       </>
     );
   } else if (view === "selectorProgress") {
     return (
       <>
-        <select
+        <SelectStyles
           value={selectedClientProgress}
           onChange={handleSelectChangeProgress}
         >
@@ -74,13 +77,13 @@ const ToDoList = ({
           {toDoList.map((todo) => {
             return <ToDo todo={todo} view={view} />;
           })}
-        </select>
+        </SelectStyles>
       </>
     );
   } else if (view === "selectorFinished") {
     return (
       <>
-        <select
+        <SelectStyles
           value={selectedClientFinished}
           onChange={handleSelectChangeFinished}
         >
@@ -88,7 +91,7 @@ const ToDoList = ({
           {toDoList.map((todo) => {
             return <ToDo todo={todo} view={view} />;
           })}
-        </select>
+        </SelectStyles>
       </>
     );
   }

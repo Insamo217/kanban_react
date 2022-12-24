@@ -1,19 +1,20 @@
 import React, { useState } from "react";
 import { ButtonStyles } from "./styles";
 
-function AddingList({ isShow, taskListBackLog }) {
-  return isShow ? <>{taskListBackLog}</> : null;
+//AddingList
+function TaskList({ isShow, taskList }) {
+  return isShow ? <>{taskList}</> : null;
 }
-
-function AddCardBackLog({ taskListBackLog }) {
+//AddCardBackLog
+function FormSelector({ taskList }) {
   const [isShow, setIsShow] = useState(true);
 
   return (
     <>
-      <AddingList isShow={!isShow} taskListBackLog={taskListBackLog} />
+      <TaskList isShow={!isShow} taskList={taskList} />
       <ButtonStyles onClick={() => setIsShow(!isShow)}>+ Add Card</ButtonStyles>
     </>
   );
 }
 
-export default AddCardBackLog;
+export default FormSelector;

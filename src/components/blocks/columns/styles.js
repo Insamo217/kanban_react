@@ -57,3 +57,14 @@ export const InputStyles = styled.input`
   border: none;
   height: 20px;
 `;
+
+export const SelectStyles = styled.select`
+  height: 30px;
+  color: #5e6c84;
+  font-size: 18px;
+  background-color: white;
+  border-radius: 10px;
+  border: none;
+  width: 150px;
+  position: absolute;
+`;

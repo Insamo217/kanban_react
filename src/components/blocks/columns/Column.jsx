@@ -7,8 +7,8 @@ function Column(props) {
       {props.title}
       <TaskListDivStyles>{props.taskList}</TaskListDivStyles>
       {props.taskForm}
-      {props.addCardBackLog}
-      {props.addCard}
+      {props.formSelector}
+      {props.formAddCard}
     </ColumnStyles>
   );
 }

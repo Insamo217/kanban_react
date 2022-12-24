@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import Column from "components/blocks/column/column";
+import Column from "components/blocks/columns/Column";
 import { Wrapper } from "../page-wrapper/styles";
 import { testList } from "mocks/list";
-import ToDoList from "components/blocks/column/todolist";
-import AddCard from "components/blocks/column/addcard";
-import AddCardBackLog from "components/blocks/column/listInBacklog";
+import ToDoList from "components/blocks/columns/todolist";
+import FormAddCard from "components/blocks/columns/FormAddCard";
+import FormSelector from "components/blocks/columns/FormSelector";
 
 function Main() {
   const [toDoList, setToDoList] = useState(testList);
@@ -44,14 +44,14 @@ function Main() {
       <Column
         title="Backlog"
         taskList={<ToDoList toDoList={toDoList} view="ulList" />}
-        addCard={<AddCard addTask={addTask} />}
+        formAddCard={<FormAddCard addTask={addTask} />}
       />
       <Column
         title="Ready"
         taskList={<ToDoList toDoList={toDoListReady} view="ulList" />}
-        addCardBackLog={
-          <AddCardBackLog
-            taskListBackLog={
+        formSelector={
+          <FormSelector
+            taskList={
               <ToDoList
                 toDoList={toDoList}
                 view="selectorReady"
@@ -64,9 +64,9 @@ function Main() {
       <Column
         title="In Progress"
         taskList={<ToDoList toDoList={toDoListProgress} view="ulList" />}
-        addCardBackLog={
-          <AddCardBackLog
-            taskListBackLog={
+        formSelector={
+          <FormSelector
+            taskList={
               <ToDoList
                 toDoList={toDoListReady}
                 view="selectorProgress"
@@ -79,9 +79,9 @@ function Main() {
       <Column
         title="Finished"
         taskList={<ToDoList toDoList={toDoListFinished} view="ulList" />}
-        addCardBackLog={
-          <AddCardBackLog
-            taskListBackLog={
+        formSelector={
+          <FormSelector
+            taskList={
               <ToDoList
                 toDoList={toDoListProgress}
                 view="selectorFinished"

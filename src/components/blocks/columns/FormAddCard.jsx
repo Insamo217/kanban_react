@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ToDoForm from "components/blocks/column/todoform";
+import ToDoForm from "components/blocks/columns/todoform";
 import { ButtonStyles } from "./styles";
 
 function Form({ isShow, addTask, handleSubmit, handleChange, userInput }) {
@@ -16,7 +16,7 @@ function Form({ isShow, addTask, handleSubmit, handleChange, userInput }) {
   ) : null;
 }
 
-function AddCard({ addTask }) {
+function FormAddCard({ addTask }) {
   const [isShow, setIsShow] = useState(true);
   const [userInput, setUserInput] = useState("");
   const handleSubmit = (e) => {
@@ -41,4 +41,4 @@ function AddCard({ addTask }) {
   );
 }
 
-export default AddCard;
+export default FormAddCard;
