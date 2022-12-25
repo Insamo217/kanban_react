@@ -23,9 +23,10 @@ export const TaskListUlStyles = styled.ul`
 `;
 
 export const TaskListDivStyles = styled.div`
-  height: 500px;
   overflow: auto;
   margin: 20px 0 40px;
+  min-height: 150px;
+  max-height: 300px;
 `;
 
 export const FormStyles = styled.form`
