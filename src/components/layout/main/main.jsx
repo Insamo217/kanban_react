@@ -1,21 +1,24 @@
 import React, { useState } from "react";
 import Column from "components/blocks/columns/Column";
 import { Wrapper } from "../page-wrapper/styles";
-import { testList } from "mocks/list";
+//import { testList } from "mocks/list";
 import ToDoList from "components/blocks/columns/todolist";
 import FormAddCard from "components/blocks/columns/FormAddCard";
 import FormSelector from "components/blocks/columns/FormSelector";
 
 function Main() {
-  const [toDoList, setToDoList] = useState(testList);
+  const [toDoList, setToDoList] = useState([]);
   const [toDoListReady, setToDoListReady] = useState([]);
   const [toDoListProgress, setToDoListProgress] = useState([]);
   const [toDoListFinished, setToDoListFinished] = useState([]);
   const addTask = (userInput) => {
-    let copy = [...toDoList];
+    let copyBacklog = [...toDoList];
     if (userInput) {
-      copy = [...copy, { id: toDoList.length + 1, task: userInput }];
-      setToDoList(copy);
+      copyBacklog = [
+        ...copyBacklog,
+        { id: toDoList.length + 1, task: userInput },
+      ];
+      setToDoList(copyBacklog);
     }
   };
   const addTaskReady = (value) => {

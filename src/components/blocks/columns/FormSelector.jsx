@@ -1,20 +1,32 @@
 import React, { useState } from "react";
 import { ButtonStyles } from "./styles";
 
-//AddingList
 function TaskList({ isShow, taskList }) {
-  return isShow ? <>{taskList}</> : null;
+  console.log("taskList");
+  return isShow && taskList.props.toDoList.length !== 0 ? (
+    <>{taskList}</>
+  ) : null;
 }
-//AddCardBackLog
+
 function FormSelector({ taskList }) {
   const [isShow, setIsShow] = useState(true);
 
-  return (
-    <>
-      <TaskList isShow={!isShow} taskList={taskList} />
-      <ButtonStyles onClick={() => setIsShow(!isShow)}>+ Add Card</ButtonStyles>
-    </>
-  );
+  if (taskList.props.toDoList.length !== 0) {
+    return (
+      <>
+        <TaskList isShow={!isShow} taskList={taskList} />
+        <ButtonStyles onClick={() => setIsShow(!isShow)}>
+          + Add Card
+        </ButtonStyles>
+      </>
+    );
+  } else {
+    return (
+      <>
+        <ButtonStyles disabled>No Task</ButtonStyles>
+      </>
+    );
+  }
 }
 
 export default FormSelector;
