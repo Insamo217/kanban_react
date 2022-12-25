@@ -7,10 +7,23 @@ import FormAddCard from "components/blocks/columns/FormAddCard";
 import FormSelector from "components/blocks/columns/FormSelector";
 
 function Main() {
-  const [toDoList, setToDoList] = useState([]);
-  const [toDoListReady, setToDoListReady] = useState([]);
-  const [toDoListProgress, setToDoListProgress] = useState([]);
-  const [toDoListFinished, setToDoListFinished] = useState([]);
+  const [toDoList, setToDoList] = useState(
+    JSON.parse(localStorage.getItem("tasksBacklog")) || []
+  );
+
+  const [toDoListReady, setToDoListReady] = useState(
+    JSON.parse(localStorage.getItem("tasksReady")) || []
+  );
+  const [toDoListProgress, setToDoListProgress] = useState(
+    JSON.parse(localStorage.getItem("tasksProgress")) || []
+  );
+  const [toDoListFinished, setToDoListFinished] = useState(
+    JSON.parse(localStorage.getItem("tasksFinished")) || []
+  );
+  localStorage.setItem("tasksBacklog", JSON.stringify(toDoList));
+  localStorage.setItem("tasksReady", JSON.stringify(toDoListReady));
+  localStorage.setItem("tasksProgress", JSON.stringify(toDoListProgress));
+  localStorage.setItem("tasksFinished", JSON.stringify(toDoListFinished));
   const addTask = (userInput) => {
     let copyBacklog = [...toDoList];
     if (userInput) {

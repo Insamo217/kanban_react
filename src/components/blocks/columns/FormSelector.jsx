@@ -2,10 +2,8 @@ import React, { useState } from "react";
 import { ButtonStyles } from "./styles";
 
 function TaskList({ isShow, taskList }) {
-  console.log("taskList");
-  return isShow && taskList.props.toDoList.length !== 0 ? (
-    <>{taskList}</>
-  ) : null;
+  console.log("test" + { taskList });
+  return isShow ? <>{taskList}</> : null;
 }
 
 function FormSelector({ taskList }) {
@@ -20,9 +18,10 @@ function FormSelector({ taskList }) {
         </ButtonStyles>
       </>
     );
-  } else {
+  } else if (taskList.props.toDoList.length === 0) {
     return (
       <>
+        <TaskList isShow={!isShow} />
         <ButtonStyles disabled>No Task</ButtonStyles>
       </>
     );

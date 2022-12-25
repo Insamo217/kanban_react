@@ -24,6 +24,14 @@ function Profile() {
   return (
     <>
       <PopUp isShow={!isShow} />
+      <button
+        onClick={() => {
+          localStorage.clear();
+          window.location.reload();
+        }}
+      >
+        Reset
+      </button>
       <ProfileStyles onClick={() => setIsShow(!isShow)}>
         <img src={logo} alt="" />
         <ArrowDir isShow={!isShow} />
