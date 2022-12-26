@@ -20,6 +20,7 @@ const ToDoList = ({
     toDoList.forEach(function (item, i) {
       if (toDoList[i].task === event.target.value) {
         delete toDoList[i].task;
+        delete toDoList[i].id;
       }
     });
   }
@@ -30,6 +31,7 @@ const ToDoList = ({
     toDoList.forEach(function (item, i) {
       if (toDoList[i].task === event.target.value) {
         delete toDoList[i].task;
+        delete toDoList[i].id;
       }
     });
   }
@@ -40,6 +42,7 @@ const ToDoList = ({
     toDoList.forEach(function (item, i) {
       if (toDoList[i].task === event.target.value) {
         delete toDoList[i].task;
+        delete toDoList[i].id;
       }
     });
   }

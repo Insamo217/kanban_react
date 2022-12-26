@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Column from "components/blocks/columns/Column";
 import { Wrapper } from "../page-wrapper/styles";
-//import { testList } from "mocks/list";
 import ToDoList from "components/blocks/columns/todolist";
 import FormAddCard from "components/blocks/columns/FormAddCard";
 import FormSelector from "components/blocks/columns/FormSelector";
