@@ -16,33 +16,36 @@ const ToDoList = ({
 
   function handleSelectChangeReady(event) {
     setSelectedClientReady(event.target.value);
-    addTaskReady(event.target.value);
     toDoList.forEach(function (item, i) {
       if (toDoList[i].task === event.target.value) {
         delete toDoList[i].task;
+        let oldId = toDoList[i].id;
         delete toDoList[i].id;
+        addTaskReady(event.target.value, oldId);
       }
     });
   }
 
   function handleSelectChangeProgress(event) {
     setSelectedClientProgress(event.target.value);
-    addTaskProgress(event.target.value);
     toDoList.forEach(function (item, i) {
       if (toDoList[i].task === event.target.value) {
         delete toDoList[i].task;
+        let oldId = toDoList[i].id;
         delete toDoList[i].id;
+        addTaskProgress(event.target.value, oldId);
       }
     });
   }
 
   function handleSelectChangeFinished(event) {
     setSelectedClientFinished(event.target.value);
-    addTaskFinished(event.target.value);
     toDoList.forEach(function (item, i) {
       if (toDoList[i].task === event.target.value) {
         delete toDoList[i].task;
+        let oldId = toDoList[i].id;
         delete toDoList[i].id;
+        addTaskFinished(event.target.value, oldId);
       }
     });
   }
@@ -63,8 +66,8 @@ const ToDoList = ({
           onChange={handleSelectChangeReady}
         >
           <option>Backlog list</option>
-          {toDoList.map((todo) => {
-            return <ToDo todo={todo} view={view} />;
+          {toDoList.map((todo, i) => {
+            return <ToDo key={i} todo={todo} view={view} />;
           })}
         </SelectStyles>
       </>

@@ -23,6 +23,7 @@ function Main() {
   localStorage.setItem("tasksReady", JSON.stringify(toDoListReady));
   localStorage.setItem("tasksProgress", JSON.stringify(toDoListProgress));
   localStorage.setItem("tasksFinished", JSON.stringify(toDoListFinished));
+
   const addTask = (userInput) => {
     let copyBacklog = [...toDoList];
     if (userInput) {
@@ -31,27 +32,22 @@ function Main() {
         { id: toDoList.length + 1, task: userInput },
       ];
       setToDoList(copyBacklog);
+      console.log(copyBacklog);
     }
   };
-  const addTaskReady = (value) => {
+  const addTaskReady = (value, oldId) => {
     let copyReady = [...toDoListReady];
-    copyReady = [...copyReady, { id: toDoListReady.length + 1, task: value }];
+    copyReady = [...copyReady, { id: oldId, task: value }];
     setToDoListReady(copyReady);
   };
-  const addTaskProgress = (value) => {
+  const addTaskProgress = (value, oldId) => {
     let copyProgress = [...toDoListProgress];
-    copyProgress = [
-      ...copyProgress,
-      { id: toDoListProgress.length + 1, task: value },
-    ];
+    copyProgress = [...copyProgress, { id: oldId, task: value }];
     setToDoListProgress(copyProgress);
   };
-  const addTaskFinished = (value) => {
+  const addTaskFinished = (value, oldId) => {
     let copyFinished = [...toDoListFinished];
-    copyFinished = [
-      ...copyFinished,
-      { id: toDoListFinished.length + 1, task: value },
-    ];
+    copyFinished = [...copyFinished, { id: oldId, task: value }];
     setToDoListFinished(copyFinished);
   };
   return (
