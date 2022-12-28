@@ -4,20 +4,20 @@ import { Link } from "react-router-dom";
 
 const ToDo = ({ todo, view, key }) => {
   if (view === "ulList") {
-    if (todo.task) {
+    if (todo.name) {
       return (
         <>
           <TaskStyles key={todo.id}>
-            <Link to={`/task/${todo.id}`}>{todo.task}</Link>
+            <Link to={`/task/${todo.id}`}>{todo.name}</Link>
           </TaskStyles>
         </>
       );
     }
   } else {
-    if (todo.task) {
+    if (todo.name) {
       return (
-        <option key={todo.id} value={todo.task}>
-          {todo.task}
+        <option key={todo.id} value={todo.name}>
+          {todo.name}
         </option>
       );
     }

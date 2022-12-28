@@ -25,7 +25,8 @@ function DetailPage({
   if (task !== 0) {
     content = (
       <div>
-        <h2>{task.task}</h2>
+        <h2>{task.name}</h2>
+        <p>{task.description}</p>
       </div>
     );
   } else if (task === 0) {

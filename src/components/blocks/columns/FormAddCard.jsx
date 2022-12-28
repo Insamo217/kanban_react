@@ -2,13 +2,23 @@ import React, { useState } from "react";
 import ToDoForm from "components/blocks/columns/todoform";
 import { ButtonStyles } from "./styles";
 
-function Form({ isShow, addTask, handleSubmit, handleChange, userInput }) {
+function Form({
+  isShow,
+  addTask,
+  handleSubmit,
+  handleChange,
+  handleDescription,
+  userInput,
+  description,
+}) {
   return isShow ? (
     <div>
       <ToDoForm
         addTask={addTask}
         isShow={isShow}
         userInput={userInput}
+        handleDescription={handleDescription}
+        description={description}
         handleSubmit={handleSubmit}
         handleChange={handleChange}
       />
@@ -19,15 +29,17 @@ function Form({ isShow, addTask, handleSubmit, handleChange, userInput }) {
 function FormAddCard({ addTask }) {
   const [isShow, setIsShow] = useState(true);
   const [userInput, setUserInput] = useState("");
+  const [description, setdescription] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault();
-    addTask(userInput);
+    addTask(userInput, description);
     setIsShow(!isShow);
     setUserInput("");
   };
   const handleChange = (e) => {
     setUserInput(e.currentTarget.value);
   };
+  const handleDescription = (e) => setdescription(e.currentTarget.value);
   return (
     <>
       <Form
@@ -35,6 +47,7 @@ function FormAddCard({ addTask }) {
         addTask={addTask}
         handleSubmit={handleSubmit}
         handleChange={handleChange}
+        handleDescription={handleDescription}
       />
       <ButtonStyles onClick={() => setIsShow(!isShow)}>+ Add Card</ButtonStyles>
     </>
