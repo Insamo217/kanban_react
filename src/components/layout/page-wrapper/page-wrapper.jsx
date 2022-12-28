@@ -3,11 +3,29 @@ import Header from "../header/header";
 import Footer from "../footer/footer";
 import Main from "../main/main";
 
-function PageWrapper() {
+function PageWrapper({
+  addTask,
+  addTaskReady,
+  addTaskProgress,
+  addTaskFinished,
+  toDoList,
+  toDoListReady,
+  toDoListProgress,
+  toDoListFinished,
+}) {
   return (
     <>
       <Header />
-      <Main />
+      <Main
+        addTask={addTask}
+        addTaskReady={addTaskReady}
+        addTaskProgress={addTaskProgress}
+        addTaskFinished={addTaskFinished}
+        toDoList={toDoList}
+        toDoListReady={toDoListReady}
+        toDoListProgress={toDoListProgress}
+        toDoListFinished={toDoListFinished}
+      />
       <Footer />
     </>
   );
