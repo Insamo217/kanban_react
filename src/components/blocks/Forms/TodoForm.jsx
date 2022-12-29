@@ -1,6 +1,6 @@
 import React from "react";
 import { ButtonStyles } from "./styles";
-import { FormStyles, InputStyles, TextAreaStyles } from "../Column/styles";
+import { FormStyles, InputStyles, TextAreaStyles } from "./styles";
 
 const ToDoForm = ({
   handleSubmit,

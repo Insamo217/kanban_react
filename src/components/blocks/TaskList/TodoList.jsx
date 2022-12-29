@@ -93,7 +93,7 @@ const ToDoList = ({
         >
           <option>Ready list</option>
           {toDoList.map((todo) => {
-            return <ToDo key={todo.id} todo={todo} view={view} />;
+            return <ToDo todo={todo} view={view} />;
           })}
         </SelectStyles>
       </>

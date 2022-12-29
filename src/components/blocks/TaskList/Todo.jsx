@@ -8,14 +8,20 @@ const ToDo = ({ todo, view, key }) => {
       return (
         <>
           <TaskStyles>
-            <Link to={`/task/${todo.id}`}>{todo.name}</Link>
+            <Link key={todo.id} to={`/task/${todo.id}`}>
+              {todo.name}
+            </Link>
           </TaskStyles>
         </>
       );
     }
   } else {
     if (todo.name) {
-      return <option value={todo.name}>{todo.name}</option>;
+      return (
+        <option key={todo.id} value={todo.name}>
+          {todo.name}
+        </option>
+      );
     }
   }
 };

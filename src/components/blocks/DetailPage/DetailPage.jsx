@@ -84,11 +84,7 @@ function DetailPage({
       </>
     );
   } else if (task === 0) {
-    content = (
-      <h1>
-        Task with ID <em>{id}</em> was not found
-      </h1>
-    );
+    content = <h2>404</h2>;
   }
   return (
     <>

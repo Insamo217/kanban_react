@@ -15,3 +15,26 @@ export const ButtonStyles = styled.button`
     transition: 0.5s;
   }
 `;
+
+export const FormStyles = styled.form`
+  display: flex;
+  flex-direction: column;
+  width: 93%;
+  position: absolute;
+  bottom: 10px;
+`;
+
+export const InputStyles = styled.input`
+  margin-bottom: 15px;
+  border: none;
+  height: 20px;
+  padding: 5px;
+  font-family: Roboto;
+`;
+
+export const TextAreaStyles = styled.textarea`
+  margin-bottom: 15px;
+  border: none;
+  padding: 5px;
+  font-family: Roboto;
+`;
