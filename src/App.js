@@ -89,7 +89,7 @@ function App() {
           }
         />
         <Route
-          path="task/:id"
+          path="task/:id/"
           element={
             <>
               <GlobalStyle />

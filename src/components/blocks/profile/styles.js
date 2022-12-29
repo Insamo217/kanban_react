@@ -37,8 +37,8 @@ export const Arrow = styled.i`
   border-width: 0 3px 3px 0;
   display: inline-block;
   padding: 3px;
-  right: 15px;
-  top: 36px;
+  right: 14px;
+  top: 30px;
   position: absolute;
   transform: rotate(${(props) => props.rotate});
 `;

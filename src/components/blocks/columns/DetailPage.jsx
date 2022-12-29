@@ -1,6 +1,14 @@
 import React, { useState } from "react";
 import Header from "components/layout/header/header";
 import Footer from "components/layout/footer/footer";
+import { Link } from "react-router-dom";
+import { DetailPageStyles, DetailPageContent } from "./styles";
+import {
+  DetailPageButton,
+  DetailPageTextArea,
+  DetailPageInput,
+  DetailPageSpan,
+} from "./styles";
 import { useParams } from "react-router-dom";
 
 function DetailPage({
@@ -52,27 +60,26 @@ function DetailPage({
       <div>
         <h2>{task.name}</h2>
         <p>{task.description}</p>
-        <button onClick={handleEdit}>Edit</button>
+        <DetailPageButton onClick={handleEdit}>Edit</DetailPageButton>
       </div>
     );
   } else if (edit && task !== 0) {
     content = (
-      <div>
-        <input
+      <>
+        <DetailPageInput
           type="text"
           value={name}
           onChange={(e) => handleName(e.target.value)}
-        />{" "}
+        />
         <br />
-        <textarea
+        <DetailPageTextArea
           value={description}
           onChange={(e) => handleDescription(e.target.value)}
-          rows="15"
-          cols="23"
-        ></textarea>
+          rows="10"
+        ></DetailPageTextArea>
         <br />
-        <button onClick={handleSave}>Save</button>
-      </div>
+        <DetailPageButton onClick={handleSave}>Save</DetailPageButton>
+      </>
     );
   } else if (task === 0) {
     content = (
@@ -84,7 +91,14 @@ function DetailPage({
   return (
     <>
       <Header />
-      {content}
+      <DetailPageStyles>
+        <DetailPageContent>
+          {content}
+          <Link to="/">
+            <DetailPageSpan>✖</DetailPageSpan>
+          </Link>
+        </DetailPageContent>
+      </DetailPageStyles>
       <Footer toDoList={tasksBacklog} toDoListFinished={tasksFinished} />
     </>
   );

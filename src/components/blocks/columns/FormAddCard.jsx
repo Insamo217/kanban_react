@@ -49,7 +49,9 @@ function FormAddCard({ addTask }) {
         handleChange={handleChange}
         handleDescription={handleDescription}
       />
-      <ButtonStyles onClick={() => setIsShow(!isShow)}>+ Add Card</ButtonStyles>
+      <ButtonStyles cursor={"pointer"} onClick={() => setIsShow(!isShow)}>
+        + Add Card
+      </ButtonStyles>
     </>
   );
 }
