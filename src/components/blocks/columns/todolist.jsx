@@ -18,11 +18,13 @@ const ToDoList = ({
     setSelectedClientReady(event.target.value);
     toDoList.forEach(function (item, i) {
       if (toDoList[i].name === event.target.value) {
-        delete toDoList[i].name;
         let oldId = toDoList[i].id;
-        let oldDescription = toDoList[i].description;
         delete toDoList[i].id;
-        delete toDoList[i].description;
+        let oldDescription = toDoList[i].description;
+        let myIndex = toDoList.indexOf(toDoList[i]);
+        if (myIndex !== -1) {
+          toDoList.splice(myIndex, 1);
+        }
         addTaskReady(event.target.value, oldId, oldDescription);
       }
     });
@@ -32,11 +34,13 @@ const ToDoList = ({
     setSelectedClientProgress(event.target.value);
     toDoList.forEach(function (item, i) {
       if (toDoList[i].name === event.target.value) {
-        delete toDoList[i].name;
         let oldId = toDoList[i].id;
-        let oldDescription = toDoList[i].description;
         delete toDoList[i].id;
-        delete toDoList[i].description;
+        let oldDescription = toDoList[i].description;
+        let myIndex = toDoList.indexOf(toDoList[i]);
+        if (myIndex !== -1) {
+          toDoList.splice(myIndex, 1);
+        }
         addTaskProgress(event.target.value, oldId, oldDescription);
       }
     });
@@ -46,11 +50,13 @@ const ToDoList = ({
     setSelectedClientFinished(event.target.value);
     toDoList.forEach(function (item, i) {
       if (toDoList[i].name === event.target.value) {
-        delete toDoList[i].name;
         let oldId = toDoList[i].id;
-        let oldDescription = toDoList[i].description;
         delete toDoList[i].id;
-        delete toDoList[i].description;
+        let oldDescription = toDoList[i].description;
+        let myIndex = toDoList.indexOf(toDoList[i]);
+        if (myIndex !== -1) {
+          toDoList.splice(myIndex, 1);
+        }
         addTaskFinished(event.target.value, oldId, oldDescription);
       }
     });

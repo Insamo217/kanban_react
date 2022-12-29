@@ -26,7 +26,7 @@ function PageWrapper({
         toDoListProgress={toDoListProgress}
         toDoListFinished={toDoListFinished}
       />
-      <Footer />
+      <Footer toDoList={toDoList} toDoListFinished={toDoListFinished} />
     </>
   );
 }

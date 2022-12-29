@@ -1,10 +1,12 @@
 import React from "react";
+import { TasksStyles, TasksStylesSpan } from "./styles";
 
-function Tasks() {
+function Tasks(props) {
   return (
-    <>
-      <p>active tasks</p>
-    </>
+    <TasksStyles>
+      <TasksStylesSpan>Active tasks:{props.active.length}</TasksStylesSpan>
+      <TasksStylesSpan>Finished tasks: {props.finished.length}</TasksStylesSpan>
+    </TasksStyles>
   );
 }
 

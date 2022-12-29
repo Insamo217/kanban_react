@@ -28,7 +28,11 @@ function App() {
     if (userInput) {
       copyBacklog = [
         ...copyBacklog,
-        { id: toDoList.length + 1, name: userInput, description: description },
+        {
+          id: new Date().getTime(),
+          name: userInput,
+          description: description,
+        },
       ];
       setToDoList(copyBacklog);
     }

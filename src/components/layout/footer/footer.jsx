@@ -4,10 +4,10 @@ import { Wrapper } from "../page-wrapper/styles";
 import Tasks from "components/ui/tasks/tasks";
 import Autor from "components/ui/autor/autor";
 
-function Footer() {
+function Footer({ toDoList, toDoListFinished }) {
   return (
     <Wrapper backGroundColor={"#0067A3"} as="footer">
-      <Tasks />
+      <Tasks active={toDoList} finished={toDoListFinished} />
       <Autor name="Alex" year={2022} />
     </Wrapper>
   );

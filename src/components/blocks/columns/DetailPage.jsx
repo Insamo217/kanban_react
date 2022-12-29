@@ -85,7 +85,7 @@ function DetailPage({
     <>
       <Header />
       {content}
-      <Footer />
+      <Footer toDoList={tasksBacklog} toDoListFinished={tasksFinished} />
     </>
   );
 }

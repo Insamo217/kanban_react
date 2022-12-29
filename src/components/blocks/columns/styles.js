@@ -24,7 +24,7 @@ export const TaskListUlStyles = styled.ul`
 
 export const TaskListDivStyles = styled.div`
   overflow: auto;
-  margin: 20px 0 40px;
+  margin: 20px 0 125px;
   min-height: 150px;
   max-height: 300px;
 `;
@@ -32,13 +32,13 @@ export const TaskListDivStyles = styled.div`
 export const FormStyles = styled.form`
   display: flex;
   flex-direction: column;
-  width: 90%;
+  width: 93%;
   position: absolute;
   bottom: 10px;
 `;
 
 export const ButtonStyles = styled.button`
-  width: 130px;
+  width: 145px;
   color: #5e6c84;
   font-size: 18px;
   background-color: white;
