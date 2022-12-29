@@ -8,25 +8,27 @@ export const ProfileStyles = styled.div`
 `;
 
 export const Wrapper = styled.div`
-  padding: 5px;
-  position: fixed;
+  padding: 10px;
+  position: absolute;
   top: 80px;
-  width: 135px;
-  right: 20px;
+  width: 120px;
+  right: 10px;
   background-color: #ffffff;
   border-radius: 5px;
   z-index: 1;
 `;
 
-export const Links = styled.a`
+export const Links = styled.p`
   font-size: 14px;
-  line-height: 16px;
   color: #000000;
   display: block;
+  -webkit-text-decoration: auto;
   text-decoration: auto;
-  margin-bottom: 5px;
+  margin: 0 0 15px;
+  cursor: pointer;
   &:hover {
     color: #0061a4;
+    font-weight: bold;
   }
 `;
 

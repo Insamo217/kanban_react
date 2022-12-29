@@ -1,5 +1,10 @@
 import React from "react";
-import { FormStyles, ButtonStyles, InputStyles } from "./styles";
+import {
+  FormStyles,
+  ButtonStyles,
+  InputStyles,
+  TextAreaStyles,
+} from "./styles";
 
 const ToDoForm = ({
   handleSubmit,
@@ -18,13 +23,13 @@ const ToDoForm = ({
           onChange={handleChange}
           placeholder="Enter task..."
         />
-        <textarea
+        <TextAreaStyles
           value={description}
           placeholder="Enter description..."
           rows="5"
           cols="19"
           onChange={handleDescription}
-        ></textarea>
+        ></TextAreaStyles>
         <ButtonStyles>Submit</ButtonStyles>
       </FormStyles>
     </>

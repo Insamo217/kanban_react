@@ -16,7 +16,7 @@ function Main({
   toDoListFinished,
 }) {
   return (
-    <Wrapper backGroundColor={"#0079BF"} as="section">
+    <Wrapper backGroundColor={"#0079BF"} height={"80vh"} as="main">
       <Column
         title="Backlog"
         taskList={<ToDoList toDoList={toDoList} view="ulList" />}

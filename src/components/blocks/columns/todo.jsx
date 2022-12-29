@@ -7,7 +7,7 @@ const ToDo = ({ todo, view, key }) => {
     if (todo.name) {
       return (
         <>
-          <TaskStyles key={todo.id}>
+          <TaskStyles>
             <Link to={`/task/${todo.id}`}>{todo.name}</Link>
           </TaskStyles>
         </>
@@ -15,11 +15,7 @@ const ToDo = ({ todo, view, key }) => {
     }
   } else {
     if (todo.name) {
-      return (
-        <option key={todo.id} value={todo.name}>
-          {todo.name}
-        </option>
-      );
+      return <option value={todo.name}>{todo.name}</option>;
     }
   }
 };

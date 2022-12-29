@@ -5,8 +5,16 @@ import { ProfileStyles, Wrapper, Links, Arrow } from "./styles";
 function PopUp({ isShow }) {
   return isShow ? (
     <Wrapper>
-      <Links href="/">Profile</Links>
-      <Links href="/">Log Out</Links>
+      <Links>Profile</Links>
+      <Links>Log Out</Links>
+      <Links
+        onClick={() => {
+          localStorage.clear();
+          window.location.reload();
+        }}
+      >
+        Reset board
+      </Links>
     </Wrapper>
   ) : null;
 }
@@ -24,14 +32,6 @@ function Profile() {
   return (
     <>
       <PopUp isShow={!isShow} />
-      <button
-        onClick={() => {
-          localStorage.clear();
-          window.location.reload();
-        }}
-      >
-        Reset
-      </button>
       <ProfileStyles onClick={() => setIsShow(!isShow)}>
         <img src={logo} alt="" />
         <ArrowDir isShow={!isShow} />

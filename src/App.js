@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import PageWrapper from "components/layout/page-wrapper/page-wrapper";
 import { Route, Routes } from "react-router-dom";
 import DetailPage from "components/blocks/columns/DetailPage";
+import GlobalStyle from "globalStyles";
 
 function App() {
   const [toDoList, setToDoList] = useState(
@@ -72,27 +73,33 @@ function App() {
         <Route
           index
           element={
-            <PageWrapper
-              addTask={addTask}
-              addTaskReady={addTaskReady}
-              addTaskProgress={addTaskProgress}
-              addTaskFinished={addTaskFinished}
-              toDoList={toDoList}
-              toDoListReady={toDoListReady}
-              toDoListProgress={toDoListProgress}
-              toDoListFinished={toDoListFinished}
-            />
+            <>
+              <GlobalStyle />
+              <PageWrapper
+                addTask={addTask}
+                addTaskReady={addTaskReady}
+                addTaskProgress={addTaskProgress}
+                addTaskFinished={addTaskFinished}
+                toDoList={toDoList}
+                toDoListReady={toDoListReady}
+                toDoListProgress={toDoListProgress}
+                toDoListFinished={toDoListFinished}
+              />
+            </>
           }
         />
         <Route
           path="task/:id"
           element={
-            <DetailPage
-              tasksBacklog={toDoList}
-              tasksReady={toDoListReady}
-              tasksProgress={toDoListProgress}
-              tasksFinished={toDoListFinished}
-            />
+            <>
+              <GlobalStyle />
+              <DetailPage
+                tasksBacklog={toDoList}
+                tasksReady={toDoListReady}
+                tasksProgress={toDoListProgress}
+                tasksFinished={toDoListFinished}
+              />
+            </>
           }
         />
       </Route>

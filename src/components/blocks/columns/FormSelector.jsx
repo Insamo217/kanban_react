@@ -12,7 +12,11 @@ function FormSelector({ taskList }) {
     return (
       <>
         <TaskList isShow={!isShow} taskList={taskList} />
-        <ButtonStyles onClick={() => setIsShow(!isShow)}>
+        <ButtonStyles
+          cursor={"pointer"}
+          color={"black"}
+          onClick={() => setIsShow(!isShow)}
+        >
           + Add Card
         </ButtonStyles>
       </>
@@ -21,7 +25,9 @@ function FormSelector({ taskList }) {
     return (
       <>
         <TaskList isShow={isShow} />
-        <ButtonStyles disabled>No tasks to add</ButtonStyles>
+        <ButtonStyles color={"#5e6c84"} disabled cursor={"auto"}>
+          No tasks to add
+        </ButtonStyles>
       </>
     );
   }
