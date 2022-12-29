@@ -2,13 +2,15 @@ import React, { useState } from "react";
 import Header from "components/layout/header/header";
 import Footer from "components/layout/footer/footer";
 import { Link } from "react-router-dom";
-import { DetailPageStyles, DetailPageContent } from "./styles";
 import {
+  DetailPageStyles,
+  DetailPageContent,
   DetailPageButton,
   DetailPageTextArea,
   DetailPageInput,
   DetailPageSpan,
 } from "./styles";
+
 import { useParams } from "react-router-dom";
 
 function DetailPage({

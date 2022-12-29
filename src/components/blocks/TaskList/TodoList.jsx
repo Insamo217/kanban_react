@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ToDo from "./todo";
+import ToDo from "./Todo";
 
 import { TaskListUlStyles, SelectStyles } from "./styles";
 

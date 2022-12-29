@@ -1,8 +1,8 @@
 import React from "react";
 import { Wrapper } from "../page-wrapper/styles";
 
-import Tasks from "components/ui/tasks/tasks";
-import Autor from "components/ui/autor/autor";
+import Tasks from "components/layout/footer/tasks/tasks";
+import Autor from "components/layout/footer/autor/autor";
 
 function Footer({ toDoList, toDoListFinished }) {
   return (

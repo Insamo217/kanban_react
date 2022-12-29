@@ -1,9 +1,9 @@
 import React from "react";
-import Column from "components/blocks/columns/Column";
+import Column from "components/blocks/Column/Column";
 import { Wrapper } from "../page-wrapper/styles";
-import ToDoList from "components/blocks/columns/todolist";
-import FormAddCard from "components/blocks/columns/FormAddCard";
-import FormSelector from "components/blocks/columns/FormSelector";
+import ToDoList from "components/blocks/TaskList/TodoList";
+import FormAddCard from "components/blocks/Forms/FormAddCard";
+import FormSelector from "components/blocks/Forms/FormSelector";
 
 function Main({
   addTask,

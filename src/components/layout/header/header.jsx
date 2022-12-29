@@ -1,6 +1,6 @@
 import React from "react";
-import Title from "../../ui/title/title";
-import Profile from "../../blocks/profile/profile";
+import Title from "./title/title";
+import Profile from "components/blocks/Profile/Profile";
 import { Wrapper } from "../page-wrapper/styles";
 
 function Header() {

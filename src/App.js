@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import PageWrapper from "components/layout/page-wrapper/page-wrapper";
 import { Route, Routes } from "react-router-dom";
-import DetailPage from "components/blocks/columns/DetailPage";
+import DetailPage from "components/blocks/DetailPage/DetailPage";
 import GlobalStyle from "globalStyles";
 
 function App() {
