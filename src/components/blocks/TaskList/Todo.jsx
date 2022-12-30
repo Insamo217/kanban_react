@@ -2,7 +2,7 @@ import React from "react";
 import { TaskStyles } from "./styles";
 import { Link } from "react-router-dom";
 
-const ToDo = ({ todo, view, key }) => {
+const ToDo = ({ todo, view }) => {
   if (view === "ulList") {
     if (todo.name) {
       return (

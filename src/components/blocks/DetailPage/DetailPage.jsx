@@ -58,13 +58,24 @@ function DetailPage({
 
   let content = null;
   if (!edit & (task !== 0)) {
-    content = (
-      <div>
-        <h2>{task.name}</h2>
-        <p>{task.description}</p>
-        <DetailPageButton onClick={handleEdit}>Edit</DetailPageButton>
-      </div>
-    );
+    if (task.description) {
+      content = (
+        <div>
+          <h2>{task.name}</h2>
+
+          <p>{task.description}</p>
+          <DetailPageButton onClick={handleEdit}>Edit</DetailPageButton>
+        </div>
+      );
+    } else {
+      content = (
+        <div>
+          <h2>{task.name}</h2>
+          <p>This task has no description</p>
+          <DetailPageButton onClick={handleEdit}>Edit</DetailPageButton>
+        </div>
+      );
+    }
   } else if (edit && task !== 0) {
     content = (
       <>
