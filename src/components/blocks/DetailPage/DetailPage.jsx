@@ -62,7 +62,6 @@ function DetailPage({
       content = (
         <div>
           <h2>{task.name}</h2>
-
           <p>{task.description}</p>
           <DetailPageButton onClick={handleEdit}>Edit</DetailPageButton>
         </div>
@@ -79,16 +78,20 @@ function DetailPage({
   } else if (edit && task !== 0) {
     content = (
       <>
+        <span>Title:</span>
+        <br />
         <DetailPageInput
           type="text"
           value={name}
           onChange={(e) => handleName(e.target.value)}
         />
         <br />
+        <span>Description:</span>
+        <br />
         <DetailPageTextArea
           value={description}
           onChange={(e) => handleDescription(e.target.value)}
-          rows="10"
+          rows="8"
         ></DetailPageTextArea>
         <br />
         <DetailPageButton onClick={handleSave}>Save</DetailPageButton>
