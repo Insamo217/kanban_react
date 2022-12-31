@@ -6,6 +6,10 @@ export const ColumnStyles = styled.div`
   width: 20%;
   border-radius: 10px;
   position: relative;
+  @media (max-width: 768px) {
+    width: auto;
+    margin: 10px;
+  }
 `;
 
 export const TaskListDivStyles = styled.div`

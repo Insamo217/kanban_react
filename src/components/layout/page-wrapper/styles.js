@@ -8,4 +8,7 @@ export const Wrapper = styled.main`
   padding: 15px 30px;
   background-color: ${(props) => props.backGroundColor};
   min-height: ${(props) => props.height};
+  @media (max-width: 768px) {
+    justify-content: center;
+  }
 `;
