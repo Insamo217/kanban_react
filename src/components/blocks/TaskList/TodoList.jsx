@@ -66,7 +66,7 @@ const ToDoList = ({
     return (
       <TaskListUlStyles>
         {toDoList.map((todo) => {
-          return <ToDo todo={todo} view={view} />;
+          return <ToDo key={todo.id} todo={todo} view={view} />;
         })}
       </TaskListUlStyles>
     );
@@ -77,11 +77,9 @@ const ToDoList = ({
           value={selectedClientReady}
           onChange={handleSelectChangeReady}
         >
-          <option key="1" value={"Backlog list"}>
-            Backlog list
-          </option>
+          <option>Backlog list</option>
           {toDoList.map((todo) => {
-            return <ToDo todo={todo} view={view} />;
+            return <ToDo key={todo.id} todo={todo} view={view} />;
           })}
         </SelectStyles>
       </>
@@ -93,11 +91,9 @@ const ToDoList = ({
           value={selectedClientProgress}
           onChange={handleSelectChangeProgress}
         >
-          <option key="2" value={"Ready list"}>
-            Ready list
-          </option>
+          <option>Ready list</option>
           {toDoList.map((todo) => {
-            return <ToDo todo={todo} view={view} />;
+            return <ToDo key={todo.id} todo={todo} view={view} />;
           })}
         </SelectStyles>
       </>
@@ -109,11 +105,9 @@ const ToDoList = ({
           value={selectedClientFinished}
           onChange={handleSelectChangeFinished}
         >
-          <option key="3" value={"progress"}>
-            In progress list
-          </option>
+          <option>In progress list</option>
           {toDoList.map((todo) => {
-            return <ToDo todo={todo} view={view} />;
+            return <ToDo key={todo.id} todo={todo} view={view} />;
           })}
         </SelectStyles>
       </>
