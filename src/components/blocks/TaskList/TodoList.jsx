@@ -77,7 +77,9 @@ const ToDoList = ({
           value={selectedClientReady}
           onChange={handleSelectChangeReady}
         >
-          <option key={2}>Backlog list</option>
+          <option key="1" value={"Backlog list"}>
+            Backlog list
+          </option>
           {toDoList.map((todo) => {
             return <ToDo todo={todo} view={view} />;
           })}
@@ -91,7 +93,9 @@ const ToDoList = ({
           value={selectedClientProgress}
           onChange={handleSelectChangeProgress}
         >
-          <option key={3}>Ready list</option>
+          <option key="2" value={"Ready list"}>
+            Ready list
+          </option>
           {toDoList.map((todo) => {
             return <ToDo todo={todo} view={view} />;
           })}
@@ -105,7 +109,9 @@ const ToDoList = ({
           value={selectedClientFinished}
           onChange={handleSelectChangeFinished}
         >
-          <option key={4}>In progress list</option>
+          <option key="3" value={"progress"}>
+            In progress list
+          </option>
           {toDoList.map((todo) => {
             return <ToDo todo={todo} view={view} />;
           })}

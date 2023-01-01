@@ -17,4 +17,10 @@ export const TaskListDivStyles = styled.div`
   margin: 20px 0 155px;
   min-height: 150px;
   max-height: 300px;
+  @media (max-width: 768px) {
+    min-height: 0px;
+    max-height: 150px;
+  }
+
+}
 `;

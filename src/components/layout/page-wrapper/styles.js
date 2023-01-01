@@ -9,6 +9,6 @@ export const Wrapper = styled.main`
   background-color: ${(props) => props.backGroundColor};
   min-height: ${(props) => props.height};
   @media (max-width: 768px) {
-    justify-content: center;
+    justify-content: space-around;
   }
 `;
