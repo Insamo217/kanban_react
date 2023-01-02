@@ -1,8 +1,8 @@
 Для установки локальной версии на компьютер в папку с проектом и последующем запуске набрать в терминале:
-git clone https://github.com/Insamo217/kanban_react
+1. git clone https://github.com/Insamo217/kanban_react
 (установить git если не установлен)
-npm install
-npm run start
+2. npm install
+3. npm run start
 
 
 Функциональные требования
