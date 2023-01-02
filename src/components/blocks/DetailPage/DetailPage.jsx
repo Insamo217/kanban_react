@@ -88,6 +88,7 @@ function DetailPage({
         <br />
         <span>Description:</span>
         <br />
+        <br />
         <DetailPageTextArea
           value={description}
           onChange={(e) => handleDescription(e.target.value)}

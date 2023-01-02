@@ -5,6 +5,7 @@ import DetailPage from "components/blocks/DetailPage/DetailPage";
 import GlobalStyle from "globalStyles";
 
 function App() {
+  //добавление cookies
   const [toDoList, setToDoList] = useState(
     JSON.parse(localStorage.getItem("tasksBacklog")) || []
   );
@@ -24,6 +25,7 @@ function App() {
   localStorage.setItem("tasksProgress", JSON.stringify(toDoListProgress));
   localStorage.setItem("tasksFinished", JSON.stringify(toDoListFinished));
 
+  //добавление заданий в списки заданий в разные столбцы
   const addTask = (userInput, description) => {
     let copyBacklog = [...toDoList];
     if (userInput) {
