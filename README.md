@@ -1,4 +1,4 @@
-Данный проект в песочнице codesandbox https://codesandbox.io/s/amazing-cookies-8oxnfy
+Данный проект в песочнице codesandbox https://codesandbox.io/s/github/Insamo217/kanban_react
 
 Для установки локальной версии на компьютер в папку с проектом и последующем запуске набрать в терминале:
 1. git clone https://github.com/Insamo217/kanban_react
