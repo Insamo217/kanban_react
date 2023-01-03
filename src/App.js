@@ -5,26 +5,32 @@ import DetailPage from "components/blocks/DetailPage/DetailPage";
 import GlobalStyle from "globalStyles";
 
 function App() {
-  const [toDoList, setToDoList] = useState(
-    JSON.parse(localStorage.getItem("tasksBacklog")) || []
-  );
+  const TasksBacklog =
+    JSON.parse(window.localStorage.getItem("tasksBacklog")) || [];
+  const [toDoList, setToDoList] = useState(TasksBacklog);
+  const TasksReady =
+    JSON.parse(window.localStorage.getItem("tasksReady")) || [];
+  const [toDoListReady, setToDoListReady] = useState(TasksReady);
+  const TasksProgress =
+    JSON.parse(window.localStorage.getItem("tasksProgress")) || [];
+  const [toDoListProgress, setToDoListProgress] = useState(TasksProgress);
+  const TasksFinished =
+    JSON.parse(window.localStorage.getItem("tasksFinished")) || [];
+  const [toDoListFinished, setToDoListFinished] = useState(TasksFinished);
 
-  const [toDoListReady, setToDoListReady] = useState(
-    JSON.parse(localStorage.getItem("tasksReady")) || []
-  );
-  const [toDoListProgress, setToDoListProgress] = useState(
-    JSON.parse(localStorage.getItem("tasksProgress")) || []
-  );
-  const [toDoListFinished, setToDoListFinished] = useState(
-    JSON.parse(localStorage.getItem("tasksFinished")) || []
-  );
+  useEffect(() => {
+    window.localStorage.setItem("tasksBacklog", JSON.stringify(toDoList));
+    window.localStorage.setItem("tasksReady", JSON.stringify(toDoListReady));
+    window.localStorage.setItem(
+      "tasksProgress",
+      JSON.stringify(toDoListProgress)
+    );
+    window.localStorage.setItem(
+      "tasksFinished",
+      JSON.stringify(toDoListFinished)
+    );
+  }, [toDoList, toDoListReady, toDoListProgress, toDoListFinished]);
 
-  localStorage.setItem("tasksBacklog", JSON.stringify(toDoList));
-  localStorage.setItem("tasksReady", JSON.stringify(toDoListReady));
-  localStorage.setItem("tasksProgress", JSON.stringify(toDoListProgress));
-  localStorage.setItem("tasksFinished", JSON.stringify(toDoListFinished));
-
-  //добавление заданий в списки заданий в разные столбцы
   const addTask = (userInput, description) => {
     let copyBacklog = [...toDoList];
     if (userInput) {
