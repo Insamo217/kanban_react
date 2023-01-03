@@ -23,7 +23,6 @@ const ToDoForm = ({
           value={description}
           placeholder="Enter description..."
           rows="5"
-          cols="19"
           onChange={handleDescription}
         ></TextAreaStyles>
         <ButtonStyles>Submit</ButtonStyles>

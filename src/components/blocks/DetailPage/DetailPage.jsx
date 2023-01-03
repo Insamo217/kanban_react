@@ -14,18 +14,19 @@ import {
 import { useParams } from "react-router-dom";
 
 function DetailPage({
-  tasksBacklog,
-  tasksReady,
-  tasksProgress,
-  tasksFinished,
+  toDoList,
+  toDoListReady,
+  toDoListProgress,
+  toDoListFinished,
+  setToDoList,
 }) {
   const { id } = useParams();
 
   let arrColumnsTasks = [
-    tasksBacklog,
-    tasksReady,
-    tasksProgress,
-    tasksFinished,
+    toDoList,
+    toDoListReady,
+    toDoListProgress,
+    toDoListFinished,
   ];
   let task = 0;
   arrColumnsTasks.forEach((element) => {
@@ -53,6 +54,7 @@ function DetailPage({
   const handleSave = () => {
     task.description = description;
     task.name = name;
+    setToDoList([...toDoList]);
     setEdit(false);
   };
 
@@ -111,7 +113,7 @@ function DetailPage({
           </Link>
         </DetailPageContent>
       </DetailPageStyles>
-      <Footer toDoList={tasksBacklog} toDoListFinished={tasksFinished} />
+      <Footer toDoList={toDoList} toDoListFinished={toDoListFinished} />
     </>
   );
 }

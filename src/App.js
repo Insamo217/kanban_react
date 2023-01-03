@@ -1,28 +1,62 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PageWrapper from "components/layout/page-wrapper/page-wrapper";
 import { Route, Routes } from "react-router-dom";
 import DetailPage from "components/blocks/DetailPage/DetailPage";
 import GlobalStyle from "globalStyles";
 
 function App() {
-  const [toDoList, setToDoList] = useState(
-    JSON.parse(localStorage.getItem("tasksBacklog")) || []
-  );
+  // const [toDoList, setToDoList] = useState(
+  //   JSON.parse(localStorage.getItem("tasksBacklog")) || []
+  // );
 
-  const [toDoListReady, setToDoListReady] = useState(
-    JSON.parse(localStorage.getItem("tasksReady")) || []
-  );
-  const [toDoListProgress, setToDoListProgress] = useState(
-    JSON.parse(localStorage.getItem("tasksProgress")) || []
-  );
-  const [toDoListFinished, setToDoListFinished] = useState(
-    JSON.parse(localStorage.getItem("tasksFinished")) || []
-  );
+  // const [toDoListReady, setToDoListReady] = useState(
+  //   JSON.parse(localStorage.getItem("tasksReady")) || []
+  // );
+  // const [toDoListProgress, setToDoListProgress] = useState(
+  //   JSON.parse(localStorage.getItem("tasksProgress")) || []
+  // );
+  // const [toDoListFinished, setToDoListFinished] = useState(
+  //   JSON.parse(localStorage.getItem("tasksFinished")) || []
+  // );
 
-  localStorage.setItem("tasksBacklog", JSON.stringify(toDoList));
-  localStorage.setItem("tasksReady", JSON.stringify(toDoListReady));
-  localStorage.setItem("tasksProgress", JSON.stringify(toDoListProgress));
-  localStorage.setItem("tasksFinished", JSON.stringify(toDoListFinished));
+  //сохраняем каждый state  в LS
+  const TasksBacklog =
+    JSON.parse(window.localStorage.getItem("tasksBacklog")) || [];
+  const [toDoList, setToDoList] = useState(TasksBacklog);
+  const TasksReady =
+    JSON.parse(window.localStorage.getItem("tasksReady")) || [];
+  const [toDoListReady, setToDoListReady] = useState(TasksReady);
+  const TasksProgress =
+    JSON.parse(window.localStorage.getItem("tasksProgress")) || [];
+  const [toDoListProgress, setToDoListProgress] = useState(TasksProgress);
+  const TasksFinished =
+    JSON.parse(window.localStorage.getItem("tasksFinished")) || [];
+  const [toDoListFinished, setToDoListFinished] = useState(TasksFinished);
+
+  useEffect(() => {
+    window.localStorage.setItem("tasksBacklog", JSON.stringify(toDoList));
+    window.localStorage.setItem("tasksReady", JSON.stringify(toDoListReady));
+    window.localStorage.setItem(
+      "tasksProgress",
+      JSON.stringify(toDoListProgress)
+    );
+    window.localStorage.setItem(
+      "tasksFinished",
+      JSON.stringify(toDoListFinished)
+    );
+  }, [toDoList, toDoListReady, toDoListProgress, toDoListFinished]);
+
+  // localStorage.setItem("tasksBacklog", JSON.stringify(toDoList));
+  // localStorage.setItem("tasksReady", JSON.stringify(toDoListReady));
+  // localStorage.setItem("tasksProgress", JSON.stringify(toDoListProgress));
+  // localStorage.setItem("tasksFinished", JSON.stringify(toDoListFinished));
+
+  // useEffect(() => {
+  //   localStorage.setItem("tasksBacklog", JSON.stringify(toDoList));
+  //   localStorage.setItem("tasksReady", JSON.stringify(toDoListReady));
+  //   localStorage.setItem("tasksProgress", JSON.stringify(toDoListProgress));
+  //   localStorage.setItem("tasksFinished", JSON.stringify(toDoListFinished));
+  // }, [toDoList, toDoListReady, toDoListProgress, toDoListFinished]);
 
   const addTask = (userInput, description) => {
     let copyBacklog = [...toDoList];
@@ -94,10 +128,11 @@ function App() {
             <>
               <GlobalStyle />
               <DetailPage
-                tasksBacklog={toDoList}
-                tasksReady={toDoListReady}
-                tasksProgress={toDoListProgress}
-                tasksFinished={toDoListFinished}
+                toDoList={toDoList}
+                toDoListReady={toDoListReady}
+                toDoListProgress={toDoListProgress}
+                toDoListFinished={toDoListFinished}
+                setToDoList={setToDoList}
               />
             </>
           }

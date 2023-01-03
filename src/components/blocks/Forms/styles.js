@@ -37,4 +37,5 @@ export const TextAreaStyles = styled.textarea`
   border: none;
   padding: 5px;
   font-family: Roboto;
+  resize: none;
 `;

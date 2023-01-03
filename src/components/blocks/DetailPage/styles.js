@@ -50,6 +50,7 @@ export const DetailPageTextArea = styled.textarea`
   padding: 5px;
   font-family: Roboto;
   width: 200px;
+  resize: none;
 `;
 
 export const DetailPageSpan = styled.span`

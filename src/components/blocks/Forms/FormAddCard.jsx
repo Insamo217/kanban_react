@@ -37,7 +37,8 @@ function FormAddCard({ addTask }) {
     setUserInput("");
   };
   const handleChange = (e) => {
-    setUserInput(e.currentTarget.value);
+    //запрет ввода пробелов в input
+    setUserInput(e.currentTarget.value.trim().replace(/ +/g, " "));
   };
   const handleDescription = (e) => setdescription(e.currentTarget.value);
   return (
