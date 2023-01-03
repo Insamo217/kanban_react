@@ -14,12 +14,14 @@ const ToDoList = ({
   const [selectedClientProgress, setSelectedClientProgress] = useState("");
   const [selectedClientFinished, setSelectedClientFinished] = useState("");
 
+  //перенос заданий из дропдауна в список заданий при выборе
+
   function handleSelectChangeReady(event) {
     setSelectedClientReady(event.target.value);
     toDoList.forEach(function (item, i) {
       if (toDoList[i].name === event.target.value) {
+        //ищем название задания из дропдана в списке заданий, добавляем в соответствующий столбец ID и description и удаляем массив из старого столбца
         let oldId = toDoList[i].id;
-        delete toDoList[i].id;
         let oldDescription = toDoList[i].description;
         let myIndex = toDoList.indexOf(toDoList[i]);
         if (myIndex !== -1) {
@@ -35,7 +37,6 @@ const ToDoList = ({
     toDoList.forEach(function (item, i) {
       if (toDoList[i].name === event.target.value) {
         let oldId = toDoList[i].id;
-        delete toDoList[i].id;
         let oldDescription = toDoList[i].description;
         let myIndex = toDoList.indexOf(toDoList[i]);
         if (myIndex !== -1) {
@@ -51,7 +52,6 @@ const ToDoList = ({
     toDoList.forEach(function (item, i) {
       if (toDoList[i].name === event.target.value) {
         let oldId = toDoList[i].id;
-        delete toDoList[i].id;
         let oldDescription = toDoList[i].description;
         let myIndex = toDoList.indexOf(toDoList[i]);
         if (myIndex !== -1) {
