@@ -1,10 +1,10 @@
 import React from "react";
 import { AutorStyles } from "./styles";
 
-function Autor(props) {
+function Autor({ name, year }) {
   return (
     <AutorStyles>
-      Kanban board by {props.name}, {props.year}
+      Kanban board by {name}, {year}
     </AutorStyles>
   );
 }

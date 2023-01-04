@@ -1,8 +1,8 @@
 import React from "react";
 import { TitleStyles } from "./slyles";
 
-function Title(props) {
-  return <TitleStyles>{props.name}</TitleStyles>;
+function Title({ name }) {
+  return <TitleStyles>{name}</TitleStyles>;
 }
 
 export default Title;

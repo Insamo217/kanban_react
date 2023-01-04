@@ -1,14 +1,14 @@
 import React from "react";
 import { ColumnStyles, TaskListDivStyles } from "./styles";
 
-function Column(props) {
+function Column({ title, taskList, taskForm, formAddCard, formSelector }) {
   return (
     <ColumnStyles>
-      {props.title}
-      <TaskListDivStyles>{props.taskList}</TaskListDivStyles>
-      {props.taskForm}
-      {props.formSelector}
-      {props.formAddCard}
+      {title}
+      <TaskListDivStyles>{taskList}</TaskListDivStyles>
+      {taskForm}
+      {formSelector}
+      {formAddCard}
     </ColumnStyles>
   );
 }

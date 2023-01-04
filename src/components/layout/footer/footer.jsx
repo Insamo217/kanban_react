@@ -8,7 +8,7 @@ function Footer({ toDoList, toDoListFinished }) {
   return (
     <Wrapper backGroundColor={"#0067A3"} as="footer">
       <Tasks active={toDoList} finished={toDoListFinished} />
-      <Autor name="Alex" year={2022} />
+      <Autor name="Alex Bolibok" year={2022} />
     </Wrapper>
   );
 }
